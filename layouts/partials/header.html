@@ -1,0 +1,25 @@
+<header class="mox-page-grid">
+  <div style="grid-column: page; display: flex; align-items: center; gap: var(--mox-space-sm); padding-block: var(--mox-space-sm);">
+    <a href="{{ "/" | relURL }}">
+      <img
+        src="{{ "images/logo-rijksoverheid.svg" | relURL }}"
+        alt="Logo Rijksoverheid"
+        class="mox-site-header-logo-rijksoverheid"
+      >
+    </a>
+    {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
+  </div>
+  {{ with site.Menus.main }}
+  <nav style="grid-column: page;" aria-label="Hoofdnavigatie">
+    <ul style="display: flex; gap: var(--mox-space-sm); list-style: none; padding: 0; margin: 0;">
+      {{ range . }}
+      <li>
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+</header>

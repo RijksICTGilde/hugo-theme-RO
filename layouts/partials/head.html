@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+
+{{/* MOx CSS — served as static files so the browser resolves @import chains */}}
+<link rel="stylesheet" href="{{ "css/mox/tokens.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/mox/index.css" | relURL }}">
+
+{{/* Theme CSS via Hugo asset pipeline */}}
+{{ $theme := resources.Get "css/theme.css" }}
+{{ $styles := slice $theme }}
+{{ with resources.Get "css/main.css" }}
+  {{ $styles = $styles | append . }}
+{{ end }}
+{{ $bundle := $styles | resources.Concat "css/bundle.css" }}
+<link rel="stylesheet" href="{{ $bundle.RelPermalink }}">

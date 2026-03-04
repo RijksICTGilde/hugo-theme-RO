@@ -1,0 +1,10 @@
+module:
+  mounts:
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: MOx/src/moxCss
+      target: static/css/mox
+    - source: MOx/public
+      target: static/images

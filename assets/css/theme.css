@@ -1,0 +1,26 @@
+/* Theme overrides for content sites using MOx design system */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--mox-color-zwart);
+  background-color: var(--mox-color-wit);
+}
+
+main > article {
+  grid-column: page;
+  max-inline-size: 48rem;
+  padding-block: var(--mox-space-lg);
+}
+
+a {
+  color: var(--mox-color-primary);
+}
+
+a:hover {
+  color: var(--mox-color-primary-hover);
+}
+
+.site-title {
+  font-weight: 700;
+}
