@@ -1,0 +1,6 @@
+.mox-image {
+  display: block;
+  display: flow-root;
+  max-inline-size: 100%;
+  block-size: auto;
+}

@@ -1,0 +1,404 @@
+/**
+  * This file is auto-generated. Do not edit directly.
+  * Generated from src/moxCss/mox.config.ts and script: `generateCss.ts`
+*/
+
+@layer props {
+  .mox-gridTemplateRows-1fr {
+    grid-template-rows: 1fr;
+  }
+  .mox-gridTemplateRows-1fr-1fr {
+    grid-template-rows: 1fr 1fr;
+  }
+  .mox-gridTemplateRows-auto-1fr {
+    grid-template-rows: minmax(0, auto) 1fr;
+  }
+  .mox-gridTemplateRows-1fr-auto {
+    grid-template-rows: 1fr minmax(0, auto);
+  }
+  .mox-gridTemplateRows-auto-1fr-1fr {
+    grid-template-rows: minmax(0, auto) 1fr 1fr;
+  }
+  .mox-gridTemplateRows-1fr-auto-1fr {
+    grid-template-rows: 1fr minmax(0, auto) 1fr;
+  }
+  .mox-gridTemplateRows-1fr-1fr-auto {
+    grid-template-rows: 1fr 1fr minmax(0, auto);
+  }
+  /* Viewport breakpoint: mobile (600px) */
+  @media only screen and (min-device-width: 600px) {
+    .mox-gridTemplateRows-1fr\@mobileMin {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@mobileMin {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@mobileMin {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@mobileMin {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@mobileMin {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@mobileMin {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@mobileMin {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @media only screen and (max-device-width: 600px) {
+    .mox-gridTemplateRows-1fr\@mobileMax {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@mobileMax {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@mobileMax {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@mobileMax {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@mobileMax {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@mobileMax {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@mobileMax {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Viewport breakpoint: tablet (900px) */
+  @media only screen and (min-device-width: 900px) {
+    .mox-gridTemplateRows-1fr\@tabletMin {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@tabletMin {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@tabletMin {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@tabletMin {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@tabletMin {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@tabletMin {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@tabletMin {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @media only screen and (max-device-width: 900px) {
+    .mox-gridTemplateRows-1fr\@tabletMax {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@tabletMax {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@tabletMax {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@tabletMax {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@tabletMax {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@tabletMax {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@tabletMax {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Viewport breakpoint: desktop (1200px) */
+  @media only screen and (min-device-width: 1200px) {
+    .mox-gridTemplateRows-1fr\@desktopMin {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@desktopMin {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@desktopMin {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@desktopMin {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@desktopMin {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@desktopMin {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@desktopMin {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @media only screen and (max-device-width: 1200px) {
+    .mox-gridTemplateRows-1fr\@desktopMax {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@desktopMax {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@desktopMax {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@desktopMax {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@desktopMax {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@desktopMax {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@desktopMax {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Viewport breakpoint: mq1440 (1440px) */
+  @media only screen and (min-device-width: 1440px) {
+    .mox-gridTemplateRows-1fr\@mq1440Min {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@mq1440Min {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@mq1440Min {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@mq1440Min {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@mq1440Min {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@mq1440Min {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@mq1440Min {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @media only screen and (max-device-width: 1440px) {
+    .mox-gridTemplateRows-1fr\@mq1440Max {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@mq1440Max {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@mq1440Max {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@mq1440Max {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@mq1440Max {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@mq1440Max {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@mq1440Max {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Container breakpoint: cq200 (200px) */
+  @container (min-width: 200px) {
+    .mox-gridTemplateRows-1fr\@cq200Min {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq200Min {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq200Min {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq200Min {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq200Min {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq200Min {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq200Min {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @container (max-width: 200px) {
+    .mox-gridTemplateRows-1fr\@cq200Max {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq200Max {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq200Max {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq200Max {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq200Max {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq200Max {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq200Max {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Container breakpoint: cq400 (400px) */
+  @container (min-width: 400px) {
+    .mox-gridTemplateRows-1fr\@cq400Min {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq400Min {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq400Min {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq400Min {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq400Min {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq400Min {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq400Min {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @container (max-width: 400px) {
+    .mox-gridTemplateRows-1fr\@cq400Max {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq400Max {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq400Max {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq400Max {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq400Max {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq400Max {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq400Max {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Container breakpoint: cq600 (600px) */
+  @container (min-width: 600px) {
+    .mox-gridTemplateRows-1fr\@cq600Min {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq600Min {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq600Min {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq600Min {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq600Min {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq600Min {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq600Min {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @container (max-width: 600px) {
+    .mox-gridTemplateRows-1fr\@cq600Max {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq600Max {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq600Max {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq600Max {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq600Max {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq600Max {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq600Max {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  /* Container breakpoint: cq800 (800px) */
+  @container (min-width: 800px) {
+    .mox-gridTemplateRows-1fr\@cq800Min {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq800Min {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq800Min {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq800Min {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq800Min {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq800Min {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq800Min {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+  @container (max-width: 800px) {
+    .mox-gridTemplateRows-1fr\@cq800Max {
+      grid-template-rows: 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr\@cq800Max {
+      grid-template-rows: 1fr 1fr;
+    }
+    .mox-gridTemplateRows-auto-1fr\@cq800Max {
+      grid-template-rows: minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto\@cq800Max {
+      grid-template-rows: 1fr minmax(0, auto);
+    }
+    .mox-gridTemplateRows-auto-1fr-1fr\@cq800Max {
+      grid-template-rows: minmax(0, auto) 1fr 1fr;
+    }
+    .mox-gridTemplateRows-1fr-auto-1fr\@cq800Max {
+      grid-template-rows: 1fr minmax(0, auto) 1fr;
+    }
+    .mox-gridTemplateRows-1fr-1fr-auto\@cq800Max {
+      grid-template-rows: 1fr 1fr minmax(0, auto);
+    }
+  }
+}

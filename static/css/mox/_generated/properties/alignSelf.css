@@ -1,0 +1,251 @@
+/**
+  * This file is auto-generated. Do not edit directly.
+  * Generated from src/moxCss/mox.config.ts and script: `generateCss.ts`
+*/
+
+@layer props {
+  .mox-alignSelf-start {
+    align-self: start;
+  }
+  .mox-alignSelf-end {
+    align-self: end;
+  }
+  .mox-alignSelf-center {
+    align-self: center;
+  }
+  .mox-alignSelf-stretch {
+    align-self: stretch;
+  }
+  /* Viewport breakpoint: mobile (600px) */
+  @media only screen and (min-device-width: 600px) {
+    .mox-alignSelf-start\@mobileMin {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@mobileMin {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@mobileMin {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@mobileMin {
+      align-self: stretch;
+    }
+  }
+  @media only screen and (max-device-width: 600px) {
+    .mox-alignSelf-start\@mobileMax {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@mobileMax {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@mobileMax {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@mobileMax {
+      align-self: stretch;
+    }
+  }
+  /* Viewport breakpoint: tablet (900px) */
+  @media only screen and (min-device-width: 900px) {
+    .mox-alignSelf-start\@tabletMin {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@tabletMin {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@tabletMin {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@tabletMin {
+      align-self: stretch;
+    }
+  }
+  @media only screen and (max-device-width: 900px) {
+    .mox-alignSelf-start\@tabletMax {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@tabletMax {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@tabletMax {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@tabletMax {
+      align-self: stretch;
+    }
+  }
+  /* Viewport breakpoint: desktop (1200px) */
+  @media only screen and (min-device-width: 1200px) {
+    .mox-alignSelf-start\@desktopMin {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@desktopMin {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@desktopMin {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@desktopMin {
+      align-self: stretch;
+    }
+  }
+  @media only screen and (max-device-width: 1200px) {
+    .mox-alignSelf-start\@desktopMax {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@desktopMax {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@desktopMax {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@desktopMax {
+      align-self: stretch;
+    }
+  }
+  /* Viewport breakpoint: mq1440 (1440px) */
+  @media only screen and (min-device-width: 1440px) {
+    .mox-alignSelf-start\@mq1440Min {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@mq1440Min {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@mq1440Min {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@mq1440Min {
+      align-self: stretch;
+    }
+  }
+  @media only screen and (max-device-width: 1440px) {
+    .mox-alignSelf-start\@mq1440Max {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@mq1440Max {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@mq1440Max {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@mq1440Max {
+      align-self: stretch;
+    }
+  }
+  /* Container breakpoint: cq200 (200px) */
+  @container (min-width: 200px) {
+    .mox-alignSelf-start\@cq200Min {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq200Min {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq200Min {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq200Min {
+      align-self: stretch;
+    }
+  }
+  @container (max-width: 200px) {
+    .mox-alignSelf-start\@cq200Max {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq200Max {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq200Max {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq200Max {
+      align-self: stretch;
+    }
+  }
+  /* Container breakpoint: cq400 (400px) */
+  @container (min-width: 400px) {
+    .mox-alignSelf-start\@cq400Min {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq400Min {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq400Min {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq400Min {
+      align-self: stretch;
+    }
+  }
+  @container (max-width: 400px) {
+    .mox-alignSelf-start\@cq400Max {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq400Max {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq400Max {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq400Max {
+      align-self: stretch;
+    }
+  }
+  /* Container breakpoint: cq600 (600px) */
+  @container (min-width: 600px) {
+    .mox-alignSelf-start\@cq600Min {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq600Min {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq600Min {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq600Min {
+      align-self: stretch;
+    }
+  }
+  @container (max-width: 600px) {
+    .mox-alignSelf-start\@cq600Max {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq600Max {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq600Max {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq600Max {
+      align-self: stretch;
+    }
+  }
+  /* Container breakpoint: cq800 (800px) */
+  @container (min-width: 800px) {
+    .mox-alignSelf-start\@cq800Min {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq800Min {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq800Min {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq800Min {
+      align-self: stretch;
+    }
+  }
+  @container (max-width: 800px) {
+    .mox-alignSelf-start\@cq800Max {
+      align-self: start;
+    }
+    .mox-alignSelf-end\@cq800Max {
+      align-self: end;
+    }
+    .mox-alignSelf-center\@cq800Max {
+      align-self: center;
+    }
+    .mox-alignSelf-stretch\@cq800Max {
+      align-self: stretch;
+    }
+  }
+}

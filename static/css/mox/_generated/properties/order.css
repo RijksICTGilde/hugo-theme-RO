@@ -1,0 +1,659 @@
+/**
+  * This file is auto-generated. Do not edit directly.
+  * Generated from src/moxCss/mox.config.ts and script: `generateCss.ts`
+*/
+
+@layer props {
+  .mox-order-0 {
+    order: 0;
+  }
+  .mox-order-1 {
+    order: 1;
+  }
+  .mox-order-2 {
+    order: 2;
+  }
+  .mox-order-3 {
+    order: 3;
+  }
+  .mox-order-4 {
+    order: 4;
+  }
+  .mox-order-5 {
+    order: 5;
+  }
+  .mox-order-auto {
+    order: auto;
+  }
+  .mox-order--5 {
+    order: -5;
+  }
+  .mox-order--4 {
+    order: -4;
+  }
+  .mox-order--3 {
+    order: -3;
+  }
+  .mox-order--2 {
+    order: -2;
+  }
+  .mox-order--1 {
+    order: -1;
+  }
+  /* Viewport breakpoint: mobile (600px) */
+  @media only screen and (min-device-width: 600px) {
+    .mox-order-0\@mobileMin {
+      order: 0;
+    }
+    .mox-order-1\@mobileMin {
+      order: 1;
+    }
+    .mox-order-2\@mobileMin {
+      order: 2;
+    }
+    .mox-order-3\@mobileMin {
+      order: 3;
+    }
+    .mox-order-4\@mobileMin {
+      order: 4;
+    }
+    .mox-order-5\@mobileMin {
+      order: 5;
+    }
+    .mox-order-auto\@mobileMin {
+      order: auto;
+    }
+    .mox-order--5\@mobileMin {
+      order: -5;
+    }
+    .mox-order--4\@mobileMin {
+      order: -4;
+    }
+    .mox-order--3\@mobileMin {
+      order: -3;
+    }
+    .mox-order--2\@mobileMin {
+      order: -2;
+    }
+    .mox-order--1\@mobileMin {
+      order: -1;
+    }
+  }
+  @media only screen and (max-device-width: 600px) {
+    .mox-order-0\@mobileMax {
+      order: 0;
+    }
+    .mox-order-1\@mobileMax {
+      order: 1;
+    }
+    .mox-order-2\@mobileMax {
+      order: 2;
+    }
+    .mox-order-3\@mobileMax {
+      order: 3;
+    }
+    .mox-order-4\@mobileMax {
+      order: 4;
+    }
+    .mox-order-5\@mobileMax {
+      order: 5;
+    }
+    .mox-order-auto\@mobileMax {
+      order: auto;
+    }
+    .mox-order--5\@mobileMax {
+      order: -5;
+    }
+    .mox-order--4\@mobileMax {
+      order: -4;
+    }
+    .mox-order--3\@mobileMax {
+      order: -3;
+    }
+    .mox-order--2\@mobileMax {
+      order: -2;
+    }
+    .mox-order--1\@mobileMax {
+      order: -1;
+    }
+  }
+  /* Viewport breakpoint: tablet (900px) */
+  @media only screen and (min-device-width: 900px) {
+    .mox-order-0\@tabletMin {
+      order: 0;
+    }
+    .mox-order-1\@tabletMin {
+      order: 1;
+    }
+    .mox-order-2\@tabletMin {
+      order: 2;
+    }
+    .mox-order-3\@tabletMin {
+      order: 3;
+    }
+    .mox-order-4\@tabletMin {
+      order: 4;
+    }
+    .mox-order-5\@tabletMin {
+      order: 5;
+    }
+    .mox-order-auto\@tabletMin {
+      order: auto;
+    }
+    .mox-order--5\@tabletMin {
+      order: -5;
+    }
+    .mox-order--4\@tabletMin {
+      order: -4;
+    }
+    .mox-order--3\@tabletMin {
+      order: -3;
+    }
+    .mox-order--2\@tabletMin {
+      order: -2;
+    }
+    .mox-order--1\@tabletMin {
+      order: -1;
+    }
+  }
+  @media only screen and (max-device-width: 900px) {
+    .mox-order-0\@tabletMax {
+      order: 0;
+    }
+    .mox-order-1\@tabletMax {
+      order: 1;
+    }
+    .mox-order-2\@tabletMax {
+      order: 2;
+    }
+    .mox-order-3\@tabletMax {
+      order: 3;
+    }
+    .mox-order-4\@tabletMax {
+      order: 4;
+    }
+    .mox-order-5\@tabletMax {
+      order: 5;
+    }
+    .mox-order-auto\@tabletMax {
+      order: auto;
+    }
+    .mox-order--5\@tabletMax {
+      order: -5;
+    }
+    .mox-order--4\@tabletMax {
+      order: -4;
+    }
+    .mox-order--3\@tabletMax {
+      order: -3;
+    }
+    .mox-order--2\@tabletMax {
+      order: -2;
+    }
+    .mox-order--1\@tabletMax {
+      order: -1;
+    }
+  }
+  /* Viewport breakpoint: desktop (1200px) */
+  @media only screen and (min-device-width: 1200px) {
+    .mox-order-0\@desktopMin {
+      order: 0;
+    }
+    .mox-order-1\@desktopMin {
+      order: 1;
+    }
+    .mox-order-2\@desktopMin {
+      order: 2;
+    }
+    .mox-order-3\@desktopMin {
+      order: 3;
+    }
+    .mox-order-4\@desktopMin {
+      order: 4;
+    }
+    .mox-order-5\@desktopMin {
+      order: 5;
+    }
+    .mox-order-auto\@desktopMin {
+      order: auto;
+    }
+    .mox-order--5\@desktopMin {
+      order: -5;
+    }
+    .mox-order--4\@desktopMin {
+      order: -4;
+    }
+    .mox-order--3\@desktopMin {
+      order: -3;
+    }
+    .mox-order--2\@desktopMin {
+      order: -2;
+    }
+    .mox-order--1\@desktopMin {
+      order: -1;
+    }
+  }
+  @media only screen and (max-device-width: 1200px) {
+    .mox-order-0\@desktopMax {
+      order: 0;
+    }
+    .mox-order-1\@desktopMax {
+      order: 1;
+    }
+    .mox-order-2\@desktopMax {
+      order: 2;
+    }
+    .mox-order-3\@desktopMax {
+      order: 3;
+    }
+    .mox-order-4\@desktopMax {
+      order: 4;
+    }
+    .mox-order-5\@desktopMax {
+      order: 5;
+    }
+    .mox-order-auto\@desktopMax {
+      order: auto;
+    }
+    .mox-order--5\@desktopMax {
+      order: -5;
+    }
+    .mox-order--4\@desktopMax {
+      order: -4;
+    }
+    .mox-order--3\@desktopMax {
+      order: -3;
+    }
+    .mox-order--2\@desktopMax {
+      order: -2;
+    }
+    .mox-order--1\@desktopMax {
+      order: -1;
+    }
+  }
+  /* Viewport breakpoint: mq1440 (1440px) */
+  @media only screen and (min-device-width: 1440px) {
+    .mox-order-0\@mq1440Min {
+      order: 0;
+    }
+    .mox-order-1\@mq1440Min {
+      order: 1;
+    }
+    .mox-order-2\@mq1440Min {
+      order: 2;
+    }
+    .mox-order-3\@mq1440Min {
+      order: 3;
+    }
+    .mox-order-4\@mq1440Min {
+      order: 4;
+    }
+    .mox-order-5\@mq1440Min {
+      order: 5;
+    }
+    .mox-order-auto\@mq1440Min {
+      order: auto;
+    }
+    .mox-order--5\@mq1440Min {
+      order: -5;
+    }
+    .mox-order--4\@mq1440Min {
+      order: -4;
+    }
+    .mox-order--3\@mq1440Min {
+      order: -3;
+    }
+    .mox-order--2\@mq1440Min {
+      order: -2;
+    }
+    .mox-order--1\@mq1440Min {
+      order: -1;
+    }
+  }
+  @media only screen and (max-device-width: 1440px) {
+    .mox-order-0\@mq1440Max {
+      order: 0;
+    }
+    .mox-order-1\@mq1440Max {
+      order: 1;
+    }
+    .mox-order-2\@mq1440Max {
+      order: 2;
+    }
+    .mox-order-3\@mq1440Max {
+      order: 3;
+    }
+    .mox-order-4\@mq1440Max {
+      order: 4;
+    }
+    .mox-order-5\@mq1440Max {
+      order: 5;
+    }
+    .mox-order-auto\@mq1440Max {
+      order: auto;
+    }
+    .mox-order--5\@mq1440Max {
+      order: -5;
+    }
+    .mox-order--4\@mq1440Max {
+      order: -4;
+    }
+    .mox-order--3\@mq1440Max {
+      order: -3;
+    }
+    .mox-order--2\@mq1440Max {
+      order: -2;
+    }
+    .mox-order--1\@mq1440Max {
+      order: -1;
+    }
+  }
+  /* Container breakpoint: cq200 (200px) */
+  @container (min-width: 200px) {
+    .mox-order-0\@cq200Min {
+      order: 0;
+    }
+    .mox-order-1\@cq200Min {
+      order: 1;
+    }
+    .mox-order-2\@cq200Min {
+      order: 2;
+    }
+    .mox-order-3\@cq200Min {
+      order: 3;
+    }
+    .mox-order-4\@cq200Min {
+      order: 4;
+    }
+    .mox-order-5\@cq200Min {
+      order: 5;
+    }
+    .mox-order-auto\@cq200Min {
+      order: auto;
+    }
+    .mox-order--5\@cq200Min {
+      order: -5;
+    }
+    .mox-order--4\@cq200Min {
+      order: -4;
+    }
+    .mox-order--3\@cq200Min {
+      order: -3;
+    }
+    .mox-order--2\@cq200Min {
+      order: -2;
+    }
+    .mox-order--1\@cq200Min {
+      order: -1;
+    }
+  }
+  @container (max-width: 200px) {
+    .mox-order-0\@cq200Max {
+      order: 0;
+    }
+    .mox-order-1\@cq200Max {
+      order: 1;
+    }
+    .mox-order-2\@cq200Max {
+      order: 2;
+    }
+    .mox-order-3\@cq200Max {
+      order: 3;
+    }
+    .mox-order-4\@cq200Max {
+      order: 4;
+    }
+    .mox-order-5\@cq200Max {
+      order: 5;
+    }
+    .mox-order-auto\@cq200Max {
+      order: auto;
+    }
+    .mox-order--5\@cq200Max {
+      order: -5;
+    }
+    .mox-order--4\@cq200Max {
+      order: -4;
+    }
+    .mox-order--3\@cq200Max {
+      order: -3;
+    }
+    .mox-order--2\@cq200Max {
+      order: -2;
+    }
+    .mox-order--1\@cq200Max {
+      order: -1;
+    }
+  }
+  /* Container breakpoint: cq400 (400px) */
+  @container (min-width: 400px) {
+    .mox-order-0\@cq400Min {
+      order: 0;
+    }
+    .mox-order-1\@cq400Min {
+      order: 1;
+    }
+    .mox-order-2\@cq400Min {
+      order: 2;
+    }
+    .mox-order-3\@cq400Min {
+      order: 3;
+    }
+    .mox-order-4\@cq400Min {
+      order: 4;
+    }
+    .mox-order-5\@cq400Min {
+      order: 5;
+    }
+    .mox-order-auto\@cq400Min {
+      order: auto;
+    }
+    .mox-order--5\@cq400Min {
+      order: -5;
+    }
+    .mox-order--4\@cq400Min {
+      order: -4;
+    }
+    .mox-order--3\@cq400Min {
+      order: -3;
+    }
+    .mox-order--2\@cq400Min {
+      order: -2;
+    }
+    .mox-order--1\@cq400Min {
+      order: -1;
+    }
+  }
+  @container (max-width: 400px) {
+    .mox-order-0\@cq400Max {
+      order: 0;
+    }
+    .mox-order-1\@cq400Max {
+      order: 1;
+    }
+    .mox-order-2\@cq400Max {
+      order: 2;
+    }
+    .mox-order-3\@cq400Max {
+      order: 3;
+    }
+    .mox-order-4\@cq400Max {
+      order: 4;
+    }
+    .mox-order-5\@cq400Max {
+      order: 5;
+    }
+    .mox-order-auto\@cq400Max {
+      order: auto;
+    }
+    .mox-order--5\@cq400Max {
+      order: -5;
+    }
+    .mox-order--4\@cq400Max {
+      order: -4;
+    }
+    .mox-order--3\@cq400Max {
+      order: -3;
+    }
+    .mox-order--2\@cq400Max {
+      order: -2;
+    }
+    .mox-order--1\@cq400Max {
+      order: -1;
+    }
+  }
+  /* Container breakpoint: cq600 (600px) */
+  @container (min-width: 600px) {
+    .mox-order-0\@cq600Min {
+      order: 0;
+    }
+    .mox-order-1\@cq600Min {
+      order: 1;
+    }
+    .mox-order-2\@cq600Min {
+      order: 2;
+    }
+    .mox-order-3\@cq600Min {
+      order: 3;
+    }
+    .mox-order-4\@cq600Min {
+      order: 4;
+    }
+    .mox-order-5\@cq600Min {
+      order: 5;
+    }
+    .mox-order-auto\@cq600Min {
+      order: auto;
+    }
+    .mox-order--5\@cq600Min {
+      order: -5;
+    }
+    .mox-order--4\@cq600Min {
+      order: -4;
+    }
+    .mox-order--3\@cq600Min {
+      order: -3;
+    }
+    .mox-order--2\@cq600Min {
+      order: -2;
+    }
+    .mox-order--1\@cq600Min {
+      order: -1;
+    }
+  }
+  @container (max-width: 600px) {
+    .mox-order-0\@cq600Max {
+      order: 0;
+    }
+    .mox-order-1\@cq600Max {
+      order: 1;
+    }
+    .mox-order-2\@cq600Max {
+      order: 2;
+    }
+    .mox-order-3\@cq600Max {
+      order: 3;
+    }
+    .mox-order-4\@cq600Max {
+      order: 4;
+    }
+    .mox-order-5\@cq600Max {
+      order: 5;
+    }
+    .mox-order-auto\@cq600Max {
+      order: auto;
+    }
+    .mox-order--5\@cq600Max {
+      order: -5;
+    }
+    .mox-order--4\@cq600Max {
+      order: -4;
+    }
+    .mox-order--3\@cq600Max {
+      order: -3;
+    }
+    .mox-order--2\@cq600Max {
+      order: -2;
+    }
+    .mox-order--1\@cq600Max {
+      order: -1;
+    }
+  }
+  /* Container breakpoint: cq800 (800px) */
+  @container (min-width: 800px) {
+    .mox-order-0\@cq800Min {
+      order: 0;
+    }
+    .mox-order-1\@cq800Min {
+      order: 1;
+    }
+    .mox-order-2\@cq800Min {
+      order: 2;
+    }
+    .mox-order-3\@cq800Min {
+      order: 3;
+    }
+    .mox-order-4\@cq800Min {
+      order: 4;
+    }
+    .mox-order-5\@cq800Min {
+      order: 5;
+    }
+    .mox-order-auto\@cq800Min {
+      order: auto;
+    }
+    .mox-order--5\@cq800Min {
+      order: -5;
+    }
+    .mox-order--4\@cq800Min {
+      order: -4;
+    }
+    .mox-order--3\@cq800Min {
+      order: -3;
+    }
+    .mox-order--2\@cq800Min {
+      order: -2;
+    }
+    .mox-order--1\@cq800Min {
+      order: -1;
+    }
+  }
+  @container (max-width: 800px) {
+    .mox-order-0\@cq800Max {
+      order: 0;
+    }
+    .mox-order-1\@cq800Max {
+      order: 1;
+    }
+    .mox-order-2\@cq800Max {
+      order: 2;
+    }
+    .mox-order-3\@cq800Max {
+      order: 3;
+    }
+    .mox-order-4\@cq800Max {
+      order: 4;
+    }
+    .mox-order-5\@cq800Max {
+      order: 5;
+    }
+    .mox-order-auto\@cq800Max {
+      order: auto;
+    }
+    .mox-order--5\@cq800Max {
+      order: -5;
+    }
+    .mox-order--4\@cq800Max {
+      order: -4;
+    }
+    .mox-order--3\@cq800Max {
+      order: -3;
+    }
+    .mox-order--2\@cq800Max {
+      order: -2;
+    }
+    .mox-order--1\@cq800Max {
+      order: -1;
+    }
+  }
+}

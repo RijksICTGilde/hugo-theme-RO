@@ -1,0 +1,13 @@
+/**
+  * This file is auto-generated. Do not edit directly.
+  * Generated from src/moxCss/mox.config.ts and script: `generateCss.ts`
+*/
+
+@layer props {
+  .mox-fontStyle-normal {
+    font-style: normal;
+  }
+  .mox-fontStyle-italic {
+    font-style: italic;
+  }
+}

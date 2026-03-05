@@ -1,0 +1,22 @@
+/* Ensures a minimum touch area of 48x48 pixels for interactive elements, handy if you have some small buttons or links, like a close-button or a short breadcrumb */
+.min-touch-area {
+  position: relative;
+  /* your normal button styles here */
+  border: 2px solid orange;
+}
+.min-touch-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid pink;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Make it invisible but clickable */
+  background: transparent;
+  /* pointer-events: none; */
+  z-index: 1;
+  cursor: pointer;
+}

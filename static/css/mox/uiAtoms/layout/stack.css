@@ -1,0 +1,7 @@
+@layer atoms {
+  .mox-stack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

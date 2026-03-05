@@ -1,0 +1,9 @@
+@layer reset, legacy, tokens, base, atoms, molecules,
+  organisms, props, templates, pages, overrides;
+
+@import "./reset.css";
+@import "./base.css";
+@import "./focus.css";
+
+/* icon font - not sure if this is the best set / way of using them */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

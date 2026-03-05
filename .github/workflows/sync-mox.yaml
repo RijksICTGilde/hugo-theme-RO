@@ -1,0 +1,44 @@
+name: Sync MOx CSS
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Every Monday at 06:00 UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone latest MOx
+        run: git clone --depth 1 https://github.com/MinBZK/moza-mox-nlds.git /tmp/mox
+
+      - name: Sync CSS files
+        run: |
+          rm -rf static/css/mox
+          cp -r /tmp/mox/src/moxCss static/css/mox
+
+      - name: Sync logo
+        run: cp /tmp/mox/public/logo-rijksoverheid.svg static/images/
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update MOx CSS to latest version"
+          title: "Update MOx CSS to latest version"
+          body: |
+            Automated sync of MOx design system CSS files from
+            [MinBZK/moza-mox-nlds](https://github.com/MinBZK/moza-mox-nlds).
+          branch: sync-mox-css
+          delete-branch: true
