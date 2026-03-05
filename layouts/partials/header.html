@@ -1,20 +1,24 @@
-<header class="mox-page-grid">
-  <div style="grid-column: page; display: flex; align-items: center; gap: var(--mox-space-sm); padding-block: var(--mox-space-sm);">
-    <a href="{{ "/" | relURL }}">
-      <img
-        src="{{ "images/logo-rijksoverheid.svg" | relURL }}"
-        alt="Logo Rijksoverheid"
-        class="mox-site-header-logo-rijksoverheid"
-      >
-    </a>
-    {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
+<header>
+  <div class="site-header mox-page-grid">
+    <div class="mox-grid-item mox-gridColumn-page mox-paddingBlock-sm">
+      <div class="site-header__inner">
+        <a href="{{ "/" | relURL }}" class="site-header__logo">
+          <img
+            src="{{ "images/logo-rijksoverheid.svg" | relURL }}"
+            alt="Logo Rijksoverheid"
+            class="mox-site-header-logo-rijksoverheid"
+          >
+        </a>
+        {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
+      </div>
+    </div>
   </div>
   {{ with site.Menus.main }}
-  <nav style="grid-column: page;" aria-label="Hoofdnavigatie">
-    <ul style="display: flex; gap: var(--mox-space-sm); list-style: none; padding: 0; margin: 0;">
+  <nav class="site-nav mox-page-grid" aria-label="Hoofdnavigatie">
+    <ul class="site-nav__list mox-grid-item mox-gridColumn-page">
       {{ range . }}
-      <li>
-        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>
+      <li class="site-nav__item">
+        <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>
           {{ .Name }}
         </a>
       </li>
