@@ -19,6 +19,13 @@ a:hover {
   color: var(--mox-color-primary-hover);
 }
 
+/* MOx bug workaround: generated markupContent CSS sets inline-size to a
+   spacing token (~16px) on p elements, making paragraphs unusably narrow.
+   See MOX-ISSUES.md. */
+.markup-content p {
+  inline-size: auto;
+}
+
 .site-title {
   font-weight: 700;
 }
