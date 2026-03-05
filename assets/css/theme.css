@@ -1,8 +1,6 @@
 /* Theme overrides for content sites using MOx design system */
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--mox-color-zwart);
   background-color: var(--mox-color-wit);
 }
