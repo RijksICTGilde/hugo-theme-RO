@@ -15,3 +15,9 @@
 {{ end }}
 {{ $bundle := $styles | resources.Concat "css/bundle.css" }}
 <link rel="stylesheet" href="{{ $bundle.RelPermalink }}">
+
+{{/* Pagefind search — opt-in via params.search.enable */}}
+{{- if site.Params.search.enable -}}
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<script src="/pagefind/pagefind-ui.js" defer></script>
+{{- end -}}

@@ -1,3 +1,33 @@
-<footer class="mox-page-grid" style="padding-block: var(--mox-space-lg);">
-  <p style="grid-column: page;">&copy; {{ now.Year }} {{ .Site.Title }}</p>
+{{- if or (site.Params.footer.service) (site.Params.footer.about) -}}
+<footer class="mox-page-grid mox-footer">
+  <div class="mox-footer-columns">
+    {{- with site.Params.footer.service -}}
+    <nav class="mox-footer-column" aria-label="Service">
+      <h2>Service</h2>
+      <ul>
+        {{- range . -}}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{- end -}}
+      </ul>
+    </nav>
+    {{- end -}}
+    {{- with site.Params.footer.about -}}
+    <nav class="mox-footer-column" aria-label="Over deze site">
+      <h2>Over deze site</h2>
+      <ul>
+        {{- range . -}}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{- end -}}
+      </ul>
+    </nav>
+    {{- end -}}
+  </div>
+  {{- partial "language-switch.html" . -}}
+  <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
 </footer>
+{{- else -}}
+<footer class="mox-page-grid mox-footer">
+  {{- partial "language-switch.html" . -}}
+  <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{- end -}}

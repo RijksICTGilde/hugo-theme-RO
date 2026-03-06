@@ -4,8 +4,12 @@
     {{- partial "head.html" . -}}
   </head>
   <body>
+    <a class="mox-skip-link" href="#main-content">Ga direct naar inhoud</a>
     {{- partial "header.html" . -}}
-    <main class="mox-page-grid">
+    {{- if site.Params.breadcrumbs.enable -}}
+      {{- partial "breadcrumbs.html" . -}}
+    {{- end -}}
+    <main id="main-content" class="mox-page-grid">
       {{- block "main" . }}{{ end -}}
     </main>
     {{- partial "footer.html" . -}}

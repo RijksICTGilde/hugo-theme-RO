@@ -8,6 +8,13 @@
       >
     </a>
     {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
+    {{- if site.Params.search.enable -}}
+    <form class="mox-search" role="search" action="{{ "search/" | relURL }}" method="get">
+      <label for="mox-search-input" class="mox-visually-hidden">Zoeken</label>
+      <input id="mox-search-input" type="search" name="q" placeholder="Vul in wat u zoekt" autocomplete="off">
+      <button type="submit">Zoeken</button>
+    </form>
+    {{- end -}}
   </div>
   {{ with site.Menus.main }}
   <nav style="grid-column: page;" aria-label="Hoofdnavigatie">
