@@ -88,11 +88,41 @@ a:hover {
   color: var(--mox-color-zwart);
 }
 
-/* Footer */
+/* Footer — light variant (default) */
 .mox-footer {
   padding-block: var(--mox-space-lg);
   background-color: var(--mox-color-cool-grey-100);
+  color: var(--mox-color-zwart);
   border-block-start: var(--mox-border-width-md) solid var(--mox-color-primary);
+}
+
+/* Footer — dark variant */
+.mox-footer[data-variant="dark"] {
+  background-color: var(--mox-color-primary);
+  color: var(--mox-color-wit);
+  border-block-start: none;
+}
+
+.mox-footer[data-variant="dark"] a {
+  color: var(--mox-color-wit);
+}
+
+.mox-footer[data-variant="dark"] a:hover {
+  color: var(--mox-color-wit);
+  text-decoration: underline;
+}
+
+.mox-footer[data-variant="dark"] .mox-footer-column h2 {
+  color: var(--mox-color-wit);
+}
+
+.mox-footer[data-variant="dark"] a:focus-visible {
+  outline: 2px solid var(--mox-color-wit);
+  outline-offset: 2px;
+}
+
+.mox-footer[data-variant="dark"] .mox-footer-copyright {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .mox-footer-columns {
@@ -100,6 +130,19 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: var(--mox-space-xl);
+}
+
+.mox-footer-description {
+  flex: 1 1 40%;
+}
+
+.mox-footer-description p {
+  font-style: italic;
+  margin: 0;
+}
+
+.mox-footer-column {
+  flex: 1 1 20%;
 }
 
 .mox-footer-column h2 {
@@ -118,6 +161,11 @@ a:hover {
   margin-block-end: var(--mox-space-3xs);
 }
 
+.mox-footer-column li::before {
+  content: "›" / "";
+  margin-inline-end: var(--mox-space-3xs);
+}
+
 .mox-footer-copyright {
   grid-column: page;
   margin-block-start: var(--mox-space-md);
@@ -126,15 +174,17 @@ a:hover {
 }
 
 /* Language switch */
+.mox-language-switch-wrapper {
+  background-color: var(--mox-color-wit);
+  padding-block: var(--mox-space-sm);
+}
+
 .mox-language-switch {
   grid-column: page;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--mox-space-xs);
-  margin-block-start: var(--mox-space-md);
-  padding-block-start: var(--mox-space-sm);
-  border-block-start: var(--mox-border-width-sm) solid var(--mox-color-cool-grey-300);
   font-size: 0.875rem;
 }
 

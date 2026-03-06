@@ -1,23 +1,25 @@
 {{- if gt (len site.Languages) 1 -}}
-<nav class="mox-language-switch" aria-label="Deze website in andere talen">
-  <span>Deze website in andere talen:</span>
-  <ul>
-    {{- if .IsTranslated -}}
-      <li><a href="{{ .RelPermalink }}" aria-current="true" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>
-      {{- range .Translations -}}
-      <li><a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>
-      {{- end -}}
-    {{- else -}}
-      {{- range site.Languages -}}
-      <li>
-        {{- if eq .Lang $.Site.Language.Lang -}}
-        <a href="{{ $.RelPermalink }}" aria-current="true" lang="{{ .Lang }}">{{ .LanguageName }}</a>
-        {{- else -}}
-        <a href="/{{ .Lang }}/" lang="{{ .Lang }}">{{ .LanguageName }}</a>
+<div class="mox-page-grid mox-language-switch-wrapper">
+  <nav class="mox-language-switch" aria-label="Deze website in andere talen">
+    <span>Deze website in andere talen:</span>
+    <ul>
+      {{- if .IsTranslated -}}
+        <li><a href="{{ .RelPermalink }}" aria-current="true" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>
+        {{- range .Translations -}}
+        <li><a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ .Language.LanguageName }}</a></li>
         {{- end -}}
-      </li>
+      {{- else -}}
+        {{- range site.Languages -}}
+        <li>
+          {{- if eq .Lang $.Site.Language.Lang -}}
+          <a href="{{ $.RelPermalink }}" aria-current="true" lang="{{ .Lang }}">{{ .LanguageName }}</a>
+          {{- else -}}
+          <a href="/{{ .Lang }}/" lang="{{ .Lang }}">{{ .LanguageName }}</a>
+          {{- end -}}
+        </li>
+        {{- end -}}
       {{- end -}}
-    {{- end -}}
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</div>
 {{- end -}}

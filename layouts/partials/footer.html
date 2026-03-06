@@ -1,6 +1,12 @@
-{{- if or (site.Params.footer.service) (site.Params.footer.about) -}}
-<footer class="mox-page-grid mox-footer">
+{{- $variant := site.Params.footer.variant | default "light" -}}
+{{- if or (site.Params.footer.service) (site.Params.footer.about) (site.Params.footer.description) -}}
+<footer class="mox-page-grid mox-footer" data-variant="{{ $variant }}">
   <div class="mox-footer-columns">
+    {{- with site.Params.footer.description -}}
+    <div class="mox-footer-description">
+      <p>{{ . }}</p>
+    </div>
+    {{- end -}}
     {{- with site.Params.footer.service -}}
     <nav class="mox-footer-column" aria-label="Service">
       <h2>Service</h2>
@@ -22,12 +28,10 @@
     </nav>
     {{- end -}}
   </div>
-  {{- partial "language-switch.html" . -}}
   <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
 </footer>
 {{- else -}}
-<footer class="mox-page-grid mox-footer">
-  {{- partial "language-switch.html" . -}}
+<footer class="mox-page-grid mox-footer" data-variant="{{ $variant }}">
   <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
 </footer>
 {{- end -}}
