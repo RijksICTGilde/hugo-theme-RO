@@ -1,9 +1,0 @@
-.mox-link {
-  cursor: pointer;
-}
-.mox-link-color {
-  --text-decoration-default: "none";
-}
-.mox-link-hover {
-  --text-decoration-hover: "underline";
-}

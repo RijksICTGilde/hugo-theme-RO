@@ -1,24 +1,23 @@
-<header class="mox-page-grid">
-  <div style="grid-column: page; display: flex; align-items: center; gap: var(--mox-space-sm); padding-block: var(--mox-space-sm);">
+<header>
+  <figure class="logo">
     <a href="{{ "/" | relURL }}">
       <img
-        src="{{ "images/logo-rijksoverheid.svg" | relURL }}"
-        alt="Logo Rijksoverheid"
-        class="mox-site-header-logo-rijksoverheid"
+        src="{{ "assets/images/beeldmerk-rijksoverheid.svg" | relURL }}"
+        alt="Logo Rijksoverheid — naar de homepage"
       >
     </a>
-    {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
-    {{- if site.Params.search.enable -}}
-    <form class="mox-search" role="search" action="{{ "search/" | relURL }}" method="get">
-      <label for="mox-search-input" class="mox-visually-hidden">Zoeken</label>
-      <input id="mox-search-input" type="search" name="q" placeholder="Vul in wat u zoekt" autocomplete="off">
-      <button type="submit">Zoeken</button>
-    </form>
-    {{- end -}}
-  </div>
+  </figure>
+  {{ with .Site.Title }}<span class="site-title">{{ . }}</span>{{ end }}
+  {{- if site.Params.search.enable -}}
+  <form role="search" action="{{ "search/" | relURL }}" method="get">
+    <label for="search-input" class="visually-hidden">Zoeken</label>
+    <input id="search-input" type="search" name="q" placeholder="Zoeken" autocomplete="off">
+    <button type="submit">Zoeken</button>
+  </form>
+  {{- end -}}
   {{ with site.Menus.main }}
-  <nav style="grid-column: page;" aria-label="Hoofdnavigatie">
-    <ul style="display: flex; gap: var(--mox-space-sm); list-style: none; padding: 0; margin: 0;">
+  <nav class="main-nav" aria-label="Hoofdnavigatie">
+    <ul>
       {{ range . }}
       <li>
         <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>

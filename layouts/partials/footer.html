@@ -1,15 +1,14 @@
-{{- $variant := site.Params.footer.variant | default "light" -}}
 {{- if or (site.Params.footer.service) (site.Params.footer.about) (site.Params.footer.description) -}}
-<footer class="mox-page-grid mox-footer" data-variant="{{ $variant }}">
-  <div class="mox-footer-columns">
+<footer>
+  <div class="footer-links">
     {{- with site.Params.footer.description -}}
-    <div class="mox-footer-description">
+    <nav>
       <p>{{ . }}</p>
-    </div>
+    </nav>
     {{- end -}}
     {{- with site.Params.footer.service -}}
-    <nav class="mox-footer-column" aria-label="Service">
-      <h2>Service</h2>
+    <nav>
+      <h4>Service</h4>
       <ul>
         {{- range . -}}
         <li><a href="{{ .url }}">{{ .name }}</a></li>
@@ -18,8 +17,8 @@
     </nav>
     {{- end -}}
     {{- with site.Params.footer.about -}}
-    <nav class="mox-footer-column" aria-label="Over deze site">
-      <h2>Over deze site</h2>
+    <nav>
+      <h4>Over deze site</h4>
       <ul>
         {{- range . -}}
         <li><a href="{{ .url }}">{{ .name }}</a></li>
@@ -28,10 +27,10 @@
     </nav>
     {{- end -}}
   </div>
-  <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
+  <p class="footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
 </footer>
 {{- else -}}
-<footer class="mox-page-grid mox-footer" data-variant="{{ $variant }}">
-  <p class="mox-footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
+<footer>
+  <p class="footer-copyright">&copy; {{ now.Year }} {{ .Site.Title }}</p>
 </footer>
 {{- end -}}

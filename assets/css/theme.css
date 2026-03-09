@@ -1,56 +1,34 @@
-/* Theme overrides for content sites using MOx design system */
+/* Theme overrides for content sites using the MOx design system (poc-moza) */
 
-body {
-  color: var(--mox-color-zwart);
-  background-color: var(--mox-color-wit);
-}
-
-main > article {
-  grid-column: page;
-  max-inline-size: 48rem;
-  padding-block: var(--mox-space-lg);
-}
-
-a {
-  color: var(--mox-color-primary);
-}
-
-a:hover {
-  color: var(--mox-color-primary-hover);
-}
-
-/* MOx bug workaround: generated markupContent CSS sets inline-size to a
-   spacing token (~16px) on p elements, making paragraphs unusably narrow.
-   See MOX-ISSUES.md. */
-.markup-content p {
-  inline-size: auto;
-}
+/* The poc-moza style.css handles body, typography, forms, navigation, cards,
+   and all component styling via MOx design tokens. This file adds only
+   Hugo-theme-specific layout and component styles. */
 
 .site-title {
-  font-weight: 700;
+  font-weight: var(--mox-text-font-weight-bold);
 }
 
 /* Skip-to-content link */
-.mox-skip-link {
+.skip-link {
   position: absolute;
   inset-inline-start: -9999px;
   z-index: 1000;
-  padding: var(--mox-space-xs) var(--mox-space-sm);
-  background-color: var(--mox-color-primary);
-  color: var(--mox-color-primary-contrast);
-  font-weight: 700;
+  padding: var(--mox-space-padding-xs) var(--mox-space-padding-sm);
+  background-color: var(--mox-color-interactive-default-background);
+  color: var(--mox-color-text-inverse);
+  font-weight: var(--mox-text-font-weight-bold);
   text-decoration: none;
 }
 
-.mox-skip-link:focus,
-.mox-skip-link:focus-visible {
-  inset-inline-start: var(--mox-space-sm);
-  inset-block-start: var(--mox-space-sm);
-  color: var(--mox-color-primary-contrast);
+.skip-link:focus,
+.skip-link:focus-visible {
+  inset-inline-start: var(--mox-space-padding-sm);
+  inset-block-start: var(--mox-space-padding-sm);
+  color: var(--mox-color-text-inverse);
 }
 
-/* Visually hidden — accessible to screen readers */
-.mox-visually-hidden {
+/* Visually hidden -- accessible to screen readers */
+.visually-hidden {
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
@@ -62,171 +40,52 @@ a:hover {
   border: 0;
 }
 
-/* Breadcrumbs */
-.mox-breadcrumbs {
-  padding-block: var(--mox-space-xs);
-}
-
-.mox-breadcrumbs ol {
-  grid-column: page;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--mox-space-3xs);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.875rem;
-}
-
-.mox-breadcrumbs li:not(:last-child)::after {
-  content: "›";
-  margin-inline-start: var(--mox-space-3xs);
-  color: var(--mox-color-cool-grey-500);
-}
-
-.mox-breadcrumbs [aria-current="page"] {
-  color: var(--mox-color-zwart);
-}
-
-/* Footer — light variant (default) */
-.mox-footer {
-  padding-block: var(--mox-space-lg);
-  background-color: var(--mox-color-cool-grey-100);
-  color: var(--mox-color-zwart);
-  border-block-start: var(--mox-border-width-md) solid var(--mox-color-primary);
-}
-
-/* Footer — dark variant */
-.mox-footer[data-variant="dark"] {
-  background-color: var(--mox-color-primary);
-  color: var(--mox-color-wit);
-  border-block-start: none;
-}
-
-.mox-footer[data-variant="dark"] a {
-  color: var(--mox-color-wit);
-}
-
-.mox-footer[data-variant="dark"] a:hover {
-  color: var(--mox-color-wit);
-  text-decoration: underline;
-}
-
-.mox-footer[data-variant="dark"] .mox-footer-column h2 {
-  color: var(--mox-color-wit);
-}
-
-.mox-footer[data-variant="dark"] a:focus-visible {
-  outline: 2px solid var(--mox-color-wit);
-  outline-offset: 2px;
-}
-
-.mox-footer[data-variant="dark"] .mox-footer-copyright {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.mox-footer-columns {
-  grid-column: page;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--mox-space-xl);
-}
-
-.mox-footer-description {
-  flex: 1 1 40%;
-}
-
-.mox-footer-description p {
-  font-style: italic;
-  margin: 0;
-}
-
-.mox-footer-column {
-  flex: 1 1 20%;
-}
-
-.mox-footer-column h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-block-end: var(--mox-space-xs);
-}
-
-.mox-footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mox-footer-column li {
-  margin-block-end: var(--mox-space-3xs);
-}
-
-.mox-footer-column li::before {
-  content: "›" / "";
-  margin-inline-end: var(--mox-space-3xs);
-}
-
-.mox-footer-copyright {
-  grid-column: page;
-  margin-block-start: var(--mox-space-md);
-  font-size: 0.875rem;
-  color: var(--mox-color-cool-grey-600);
+/* Footer copyright */
+.footer-copyright {
+  color: var(--mox-color-text-inverse);
+  font: var(--mox-text-smalltext);
+  margin-block-start: var(--mox-space-margin-md);
+  margin-inline: auto;
+  max-inline-size: var(--mox-page-max-inline-size);
+  opacity: 0.8;
 }
 
 /* Language switch */
-.mox-language-switch-wrapper {
-  background-color: var(--mox-color-wit);
-  padding-block: var(--mox-space-sm);
+.language-switch-wrapper {
+  padding-block: var(--mox-space-padding-sm);
 }
 
-.mox-language-switch {
-  grid-column: page;
+.language-switch {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--mox-space-xs);
-  font-size: 0.875rem;
+  gap: var(--mox-space-padding-xs);
+  font: var(--mox-text-smalltext);
+  margin-inline: auto;
+  max-inline-size: var(--mox-page-max-inline-size);
+  padding-inline: var(--mox-space-padding-md);
 }
 
-.mox-language-switch ul {
+.language-switch ul {
   display: flex;
-  gap: var(--mox-space-xs);
+  gap: var(--mox-space-padding-xs);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.mox-language-switch a[aria-current="true"] {
-  font-weight: 700;
+.language-switch a[aria-current="true"] {
+  font-weight: var(--mox-text-font-weight-bold);
   text-decoration: none;
-  color: var(--mox-color-zwart);
+  color: var(--mox-color-text-default);
 }
 
 /* Search bar in header */
-.mox-search {
+header form[role="search"] {
   display: flex;
   margin-inline-start: auto;
 }
 
-.mox-search input[type="search"] {
-  padding: var(--mox-space-3xs) var(--mox-space-xs);
-  border: var(--mox-border-width-sm) solid var(--mox-color-cool-grey-400);
-  border-inline-end: none;
-  font-size: 0.875rem;
+header form[role="search"] input[type="search"] {
   min-inline-size: 12rem;
-}
-
-.mox-search button {
-  padding: var(--mox-space-3xs) var(--mox-space-sm);
-  background-color: var(--mox-color-primary);
-  color: var(--mox-color-primary-contrast);
-  border: var(--mox-border-width-sm) solid var(--mox-color-primary);
-  font-size: 0.875rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.mox-search button:hover {
-  background-color: var(--mox-color-primary-hover);
-  border-color: var(--mox-color-primary-hover);
 }

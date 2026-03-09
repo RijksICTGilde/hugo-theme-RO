@@ -2,3 +2,5 @@ CLAUDE.md
 public/
 resources/
 .hugo_build.lock
+node_modules/
+style-dictionary/tokens/

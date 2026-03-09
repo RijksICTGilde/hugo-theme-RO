@@ -1,6 +1,0 @@
-@layer atoms {
-  .mox-box {
-    color: var(--mox-text-color);
-    display: block;
-  }
-}
