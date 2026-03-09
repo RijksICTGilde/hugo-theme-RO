@@ -4,8 +4,7 @@
 {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
 
 {{/* MOx CSS — served as static files so the browser resolves @import chains */}}
-<link rel="stylesheet" href="{{ "css/mox/tokens.css" | relURL }}">
-<link rel="stylesheet" href="{{ "css/mox/index.css" | relURL }}">
+<link rel="stylesheet" href="{{ "style/style.css" | relURL }}">
 
 {{/* Theme CSS via Hugo asset pipeline */}}
 {{ $theme := resources.Get "css/theme.css" }}
