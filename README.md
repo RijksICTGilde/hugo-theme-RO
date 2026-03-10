@@ -53,6 +53,14 @@ npm run storybook            # Start Storybook dev server on port 6006
 npm run tokens               # Regenerate CSS from design tokens
 ```
 
+## Development
+
+```bash
+npm install                  # Install Storybook dependencies
+npm run storybook            # Start Storybook dev server on port 6006
+npm run tokens               # Regenerate CSS from design tokens
+```
+
 ## MOx synchronization
 
 MOx CSS, assets, tokens, and stories are kept in sync with the upstream [MinBZK/moza-poc](https://github.com/MinBZK/moza-poc) repository via a GitHub Actions workflow that runs weekly. When changes are detected, a PR is automatically created.
