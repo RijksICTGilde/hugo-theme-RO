@@ -1,0 +1,14 @@
+{{/*
+  Card grid shortcode — renders pages from a section as a card grid
+  Source: adapted from MinBZK/moza-site (layouts/_shortcodes/card-grid.html)
+
+  Usage: {{</* card-grid section="onderwerpen" */>}}
+  Pages are sorted by weight (set weight in front matter).
+*/}}
+{{- $section := .Get "section" -}}
+{{- if not $section -}}
+  {{- errorf "card-grid shortcode: 'section' parameter is verplicht" -}}
+{{- end -}}
+<section>
+  {{ partial "card-grid.html" (where site.RegularPages "Section" $section).ByWeight }}
+</section>

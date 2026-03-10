@@ -1,0 +1,11 @@
+{{/*
+  Card grid partial — wraps a collection of pages in a responsive grid
+  Source: adapted from MinBZK/moza-site (layouts/_partials/card-grid.html)
+
+  Usage: {{ partial "card-grid.html" .Pages.ByWeight }}
+*/}}
+<div class="card-grid">
+  {{- range . -}}
+  {{- partial "card.html" . -}}
+  {{- end -}}
+</div>

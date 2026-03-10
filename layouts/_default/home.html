@@ -1,0 +1,11 @@
+{{/*
+  Homepage layout with optional hero banner and card grid
+  Source: hero pattern from MinBZK/moza-site, card grid from MinBZK/moza-site
+  Base structure: hugo-theme-RO
+*/}}
+{{ define "main" }}
+{{- partial "hero.html" . -}}
+<div class="content">
+  {{ .Content }}
+</div>
+{{ end }}

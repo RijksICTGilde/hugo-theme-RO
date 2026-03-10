@@ -1,12 +1,13 @@
+{{/*
+  List/section layout with card grid
+  Source: adapted from MinBZK/moza-site (layouts/list.html)
+*/}}
 {{ define "main" }}
-<article>
+<section>
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-  <div>
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
-  </div>
+  {{ with .Pages.ByWeight }}
+  {{ partial "card-grid.html" . }}
   {{ end }}
-</article>
+</section>
 {{ end }}

@@ -1,3 +1,8 @@
+{{/*
+  HTML head
+  Source: adapted from MinBZK/moza-poc (_includes/base.njk)
+  CSS pipeline: adapted from MinBZK/moza-site (layouts/_partials/head.html)
+*/}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
@@ -8,7 +13,9 @@
 
 {{/* Theme CSS via Hugo asset pipeline */}}
 {{ $theme := resources.Get "css/theme.css" }}
-{{ $styles := slice $theme }}
+{{ $hero := resources.Get "css/components/hero.css" }}
+{{ $cardGrid := resources.Get "css/components/card-grid.css" }}
+{{ $styles := slice $theme $hero $cardGrid }}
 {{ with resources.Get "css/main.css" }}
   {{ $styles = $styles | append . }}
 {{ end }}

@@ -1,11 +1,11 @@
 # hugo-theme-ro
 
-Hugo theme for Rijksoverheid websites, integrating the [MOx design system](https://github.com/MinBZK/poc-moza).
+Hugo theme for Rijksoverheid websites, integrating the [MOx design system](https://github.com/MinBZK/moza-poc).
 
 ## Architecture
 
 ```
-MOx (MinBZK/poc-moza) — CSS, tokens, and assets vendored into static/
+MOx (MinBZK/moza-poc) — CSS, tokens, and assets vendored into static/
   ↓
 hugo-theme-ro (serves MOx CSS as static files, provides layouts)
   ↓
@@ -25,8 +25,8 @@ Projects (import theme as Hugo module)
 - `hugo.yaml` — module mounts configuration
 - `layouts/` — base template, partials, default content types
 - `assets/css/theme.css` — theme-specific layout overrides
-- `static/style/` — vendored MOx CSS files from MinBZK/poc-moza
-- `static/assets/` — fonts, images, and icons from MinBZK/poc-moza
+- `static/style/` — vendored MOx CSS files from MinBZK/moza-poc
+- `static/assets/` — fonts, images, and icons from MinBZK/moza-poc
 - `tokens/` — design token source files
 - `style-dictionary/` — token-to-CSS build pipeline
 - `.storybook/` — Storybook configuration
@@ -53,9 +53,17 @@ npm run storybook            # Start Storybook dev server on port 6006
 npm run tokens               # Regenerate CSS from design tokens
 ```
 
+## Development
+
+```bash
+npm install                  # Install Storybook dependencies
+npm run storybook            # Start Storybook dev server on port 6006
+npm run tokens               # Regenerate CSS from design tokens
+```
+
 ## MOx synchronization
 
-MOx CSS, assets, tokens, and stories are kept in sync with the upstream [MinBZK/poc-moza](https://github.com/MinBZK/poc-moza) repository via a GitHub Actions workflow that runs weekly. When changes are detected, a PR is automatically created.
+MOx CSS, assets, tokens, and stories are kept in sync with the upstream [MinBZK/moza-poc](https://github.com/MinBZK/moza-poc) repository via a GitHub Actions workflow that runs weekly. When changes are detected, a PR is automatically created.
 
 To manually trigger a sync, go to Actions > "Sync MOx CSS" > Run workflow.
 

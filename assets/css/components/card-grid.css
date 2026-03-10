@@ -1,0 +1,55 @@
+/* Card grid component
+   Source: adapted from MinBZK/moza-site (assets/css/components/card-grid.css)
+   Tokens: MOx design system (MinBZK/moza-poc) */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  width: 100%;
+}
+
+.card header img {
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.card header h2 {
+  position: relative;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* Make entire card clickable via pseudo-element on the link */
+.card header h2 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card header h2 a:focus-visible {
+  outline: none;
+}
+
+.card header h2 a:focus-visible::after {
+  box-shadow: 0 0 0 2px var(--mox-color-interactive-default-background);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.card p {
+  padding-top: 0.5rem;
+}

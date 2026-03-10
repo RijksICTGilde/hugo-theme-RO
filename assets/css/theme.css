@@ -1,6 +1,9 @@
-/* Theme overrides for content sites using the MOx design system (poc-moza) */
+/* Theme overrides for content sites using the MOx design system
+   Source: skip-link, visually-hidden patterns from MinBZK/moza-poc (style/style.css)
+   Source: footer, language-switch, search bar styles are hugo-theme-RO additions
+   Tokens: MOx design system (MinBZK/moza-poc) */
 
-/* The poc-moza style.css handles body, typography, forms, navigation, cards,
+/* The moza-poc style.css handles body, typography, forms, navigation, cards,
    and all component styling via MOx design tokens. This file adds only
    Hugo-theme-specific layout and component styles. */
 
