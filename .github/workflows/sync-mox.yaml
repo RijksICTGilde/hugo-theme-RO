@@ -23,7 +23,7 @@ jobs:
           rm -rf static/style
           mkdir -p static/style
           cp /tmp/moza-poc/style/style.css static/style/
-          cp /tmp/moza-poc/style/_mox.css static/style/
+          cp /tmp/moza-poc/style/_toepassing.css static/style/
           cp /tmp/moza-poc/style/_rijkshuisstijl.css static/style/
           cp /tmp/moza-poc/style/_reset.css static/style/
 
