@@ -1,80 +1,174 @@
 export default {
 	title: "Componenten/Navigatie",
+	tags: ["autodocs"],
+};
+
+export const Hoofdnavigatie = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Hoofdnavigatie met `aria-current=\"page\"` om de actieve pagina aan te geven.",
+			},
+		},
+	},
 	argTypes: {
-		aantalItems: {
-			control: { type: "range", min: 2, max: 8, step: 1 },
-		},
-		actievePagina: {
-			control: { type: "number", min: 1, max: 8 },
-		},
-		type: {
-			control: "select",
-			options: ["hoofdnavigatie", "subnavigatie", "breadcrumb"],
-		},
+		aantalItems: { name: "Aantal items", control: { type: "range", min: 2, max: 6, step: 1 } },
+		item1: { name: "Item 1", control: "text" },
+		item2: { name: "Item 2", control: "text" },
+		item3: { name: "Item 3", control: "text" },
+		item4: { name: "Item 4", control: "text" },
+		item5: { name: "Item 5", control: "text" },
+		item6: { name: "Item 6", control: "text" },
+	},
+	args: {
+		aantalItems: 5,
+		item1: "Home",
+		item2: "Pagina 1",
+		item3: "Pagina 2",
+		item4: "Pagina 3",
+		item5: "Pagina 4",
+		item6: "Pagina 5",
+	},
+	render: ({ aantalItems, item1, item2, item3, item4, item5, item6 }) => {
+		const labels = [item1, item2, item3, item4, item5, item6].slice(0, aantalItems);
+		const items = labels.map((label, i) => {
+			const current = i === 0 ? ' aria-current="page"' : "";
+			return `\t<li><a href="#"${current}>${label}</a></li>`;
+		}).join("\n");
+		return `
+<nav class="main-nav">
+	<ul>
+${items}
+	</ul>
+</nav>
+`;
 	},
 };
 
-export const Speeltuin = {
-	args: {
-		type: "hoofdnavigatie",
-		aantalItems: 5,
-		actievePagina: 1,
+export const SidebarNavigatie = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Sidebar navigatie voor navigatie binnen een sectie.",
+			},
+		},
 	},
-	render: ({ type, aantalItems, actievePagina }) => {
-		const labels =
-			type === "breadcrumb"
-				? ["Home", "Categorie", "Subcategorie", "Pagina", "Subpagina", "Detail", "Item", "Huidig"]
-				: type === "hoofdnavigatie"
-					? ["Home", "Pagina 1", "Pagina 2", "Pagina 3", "Pagina 4", "Pagina 5", "Pagina 6", "Pagina 7"]
-					: ["Sectie 1", "Sectie 2", "Sectie 3", "Sectie 4", "Sectie 5", "Sectie 6", "Sectie 7", "Sectie 8"];
+	argTypes: {
+		aantalItems: { name: "Aantal items", control: { type: "range", min: 2, max: 6, step: 1 } },
+		item1: { name: "Item 1", control: "text" },
+		item2: { name: "Item 2", control: "text" },
+		item3: { name: "Item 3", control: "text" },
+		item4: { name: "Item 4", control: "text" },
+		item5: { name: "Item 5", control: "text" },
+		item6: { name: "Item 6", control: "text" },
+	},
+	args: {
+		aantalItems: 5,
+		item1: "Home",
+		item2: "Pagina 1",
+		item3: "Pagina 2",
+		item4: "Pagina 3",
+		item5: "Pagina 4",
+		item6: "Pagina 5",
+	},
+	render: ({ aantalItems, item1, item2, item3, item4, item5, item6 }) => {
+		const labels = [item1, item2, item3, item4, item5, item6].slice(0, aantalItems);
+		const items = labels.map((label, i) => {
+			const current = i === 0 ? ' aria-current="page"' : "";
+			return `\t<li><a href="#"${current}>${label}</a></li>`;
+		}).join("\n");
+		return `
+<nav class="side-nav">
+	<ul>
+${items}
+	</ul>
+</nav>
+`;
+	},
+};
 
-		if (type === "breadcrumb") {
-			const items = labels.slice(0, aantalItems).map((label, i) => {
-				if (i === aantalItems - 1) return `<li aria-current="page">${label}</li>`;
-				return `<li><a href="#">${label}</a></li>`;
-			}).join("\n\t\t\t");
-			return `<nav class="breadcrumb"><ol>\n\t\t\t${items}\n\t\t</ol></nav>`;
+export const Paginering = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Pagineringsnavigatie met `aria-current=\"page\"` op de huidige pagina (als `<span>`, niet als link). Bevat optioneel Vorige/Volgende-links met `rel=\"prev\"`/`rel=\"next\"`.",
+			},
+		},
+	},
+	argTypes: {
+		aantalPaginas: { name: "Aantal pagina's", control: { type: "range", min: 2, max: 10, step: 1 } },
+		huidigePagina: { name: "Huidige pagina", control: { type: "range", min: 1, max: 10, step: 1 } },
+	},
+	args: {
+		aantalPaginas: 3,
+		huidigePagina: 1,
+	},
+	render: ({ aantalPaginas, huidigePagina }) => {
+		const pagina = Math.min(huidigePagina, aantalPaginas);
+		const items = [];
+
+		if (pagina > 1) {
+			items.push(`\t\t<li><a href="#" rel="prev">Vorige<span class="visually-hidden"> pagina</span></a></li>`);
 		}
 
-		const navClass = type === "hoofdnavigatie" ? "main-nav" : "side-nav";
-		const items = labels.slice(0, aantalItems).map((label, i) => {
-			const current = i + 1 === actievePagina ? ' aria-current="page"' : "";
-			return `<li><a href="#"${current}>${label}</a></li>`;
-		}).join("\n\t\t\t");
-		return `<nav class="${navClass}"><ul>\n\t\t\t${items}\n\t\t</ul></nav>`;
+		for (let i = 1; i <= aantalPaginas; i++) {
+			if (i === pagina) {
+				items.push(`\t\t<li><span aria-current="page">${i}</span></li>`);
+			} else {
+				items.push(`\t\t<li><a href="#">${i}</a></li>`);
+			}
+		}
+
+		if (pagina < aantalPaginas) {
+			items.push(`\t\t<li><a href="#" rel="next">Volgende<span class="visually-hidden"> pagina</span></a></li>`);
+		}
+
+		return `
+<nav class="pagination" aria-label="Paginering">
+	<ol>
+${items.join("\n")}
+	</ol>
+</nav>
+`;
 	},
 };
 
-export const Hoofdnavigatie = () => `
-	<nav class="main-nav">
-		<ul>
-			<li><a href="#" aria-current="page">Home</a></li>
-			<li><a href="#">Pagina 1</a></li>
-			<li><a href="#">Pagina 2</a></li>
-			<li><a href="#">Pagina 3</a></li>
-			<li><a href="#">Pagina 4</a></li>
-		</ul>
-	</nav>
+export const Breadcrumb = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Breadcrumb-navigatie die de hiërarchische positie van de huidige pagina toont.",
+			},
+		},
+	},
+	argTypes: {
+		aantalItems: { name: "Aantal items", control: { type: "range", min: 2, max: 5, step: 1 } },
+		item1: { name: "Item 1", control: "text" },
+		item2: { name: "Item 2", control: "text" },
+		item3: { name: "Item 3", control: "text" },
+		item4: { name: "Item 4", control: "text" },
+		item5: { name: "Item 5", control: "text" },
+	},
+	args: {
+		aantalItems: 3,
+		item1: "Home",
+		item2: "Niveau 1",
+		item3: "Niveau 2",
+		item4: "Niveau 3",
+		item5: "Niveau 4",
+	},
+	render: ({ aantalItems, item1, item2, item3, item4, item5 }) => {
+		const labels = [item1, item2, item3, item4, item5].slice(0, aantalItems);
+		const items = labels.map((label, i) => {
+			if (i === labels.length - 1) return `\t<li aria-current="page">${label}</li>`;
+			return `\t<li><a href="#">${label}</a></li>`;
+		}).join("\n");
+		return `
+<nav class="breadcrumb">
+	<ol>
+${items}
+	</ol>
+</nav>
 `;
-
-export const Subnavigatie = () => `
-	<nav class="side-nav">
-		<ul>
-			<li><a href="#" aria-current="page">Sectie 1</a></li>
-			<li><a href="#">Sectie 2</a></li>
-			<li><a href="#">Sectie 3</a></li>
-			<li><a href="#">Sectie 4</a></li>
-			<li><a href="#">Sectie 5</a></li>
-		</ul>
-	</nav>
-`;
-
-export const Breadcrumb = () => `
-	<nav class="breadcrumb">
-		<ol>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Componenten</a></li>
-			<li aria-current="page">Breadcrumb</li>
-		</ol>
-	</nav>
-`;
+	},
+};

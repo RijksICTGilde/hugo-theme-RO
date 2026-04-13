@@ -1,53 +1,74 @@
 export default {
 	title: "Typografie/Block-level tekst",
-	argTypes: {
-		tekst: { control: "text" },
-		type: {
-			control: "select",
-			options: ["blockquote", "pre", "code", "address"],
+	tags: ["autodocs"],
+};
+
+export const Citaat = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Citaat via het `<blockquote>` element.",
+			},
 		},
 	},
+	argTypes: { tekst: { control: "text", name: "Tekst" } },
+	args: { tekst: "Dit is een citaat. De beste manier om de toekomst te voorspellen is om deze zelf te creëren." },
+	render: ({ tekst }) => `
+<blockquote>
+	<p>${tekst}</p>
+</blockquote>
+`,
 };
 
-export const Speeltuin = {
+export const VoorgeformatteerdeTekst = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Voorgeformatteerde tekst via `<pre>`. Spaties en regelovergangen worden behouden.",
+			},
+		},
+	},
+	argTypes: { tekst: { control: "text", name: "Tekst" } },
+	args: { tekst: "Dit is voorgeformatteerde tekst.\n            Spaties en regelovergangen\n            worden behouden." },
+	render: ({ tekst }) => `<pre>${tekst}</pre>`,
+};
+
+export const Codeblok = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Codeblok via `<pre><code>` voor het tonen van broncode.",
+			},
+		},
+	},
+	argTypes: { tekst: { control: "text", name: "Tekst" } },
+	args: { tekst: "// Dit is een codeblok\nfunction groet(naam) {\n    return `Hallo, ${naam}!`;\n}" },
+	render: ({ tekst }) => `<pre><code>${tekst}</code></pre>`,
+};
+
+export const Adres = {
+	parameters: {
+		docs: {
+			description: {
+				story: "Contactgegevens via het `<address>` element.",
+			},
+		},
+	},
+	argTypes: {
+		regel1: { control: "text", name: "Regel 1" },
+		regel2: { control: "text", name: "Regel 2" },
+		regel3: { control: "text", name: "Regel 3" },
+	},
 	args: {
-		tekst: "Dit is een voorbeeld van block-level tekst.",
-		type: "blockquote",
+		regel1: "Contactgegevens",
+		regel2: "Voorbeeldstraat 1",
+		regel3: "1234 AB Den Haag",
 	},
-	render: ({ tekst, type }) => {
-		if (type === "blockquote") return `<blockquote><p>${tekst}</p></blockquote>`;
-		if (type === "code") return `<pre><code>${tekst}</code></pre>`;
-		if (type === "address") return `<address>${tekst}</address>`;
-		return `<pre>${tekst}</pre>`;
-	},
+	render: ({ regel1, regel2, regel3 }) => `
+<address>
+	${regel1}<br />
+	${regel2}<br />
+	${regel3}
+</address>
+`,
 };
-
-export const Citaat = () => `
-	<blockquote>
-		<p>
-			Dit is een citaat. De beste manier om de toekomst te voorspellen is om
-			deze zelf te creëren.
-		</p>
-	</blockquote>
-`;
-
-export const VoorgeformatteerdeTekst = () => `
-<pre>Dit is voorgeformatteerde tekst.
-            Spaties en regelovergangen
-            worden behouden.</pre>
-`;
-
-export const Codeblok = () => `
-<pre><code>// Dit is een codeblok
-function groet(naam) {
-    return \`Hallo, \${naam}!\`;
-}</code></pre>
-`;
-
-export const Adres = () => `
-	<address>
-		Contactgegevens<br />
-		Voorbeeldstraat 1<br />
-		1234 AB Den Haag
-	</address>
-`;
