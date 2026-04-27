@@ -8,10 +8,11 @@
  * - Notificaties sluiten (dismissed:)
  */
 
-// Vul lege visually-hidden labels in op basis van de heading in dezelfde <li>
+// Vul lege visually-hidden labels in op basis van de heading in dezelfde <li> of <article>
 document.querySelectorAll(".action-group .visually-hidden").forEach((span) => {
 	if (span.textContent.trim()) return;
-	const heading = span.closest("li")?.querySelector("h2, h3, h4");
+	const container = span.closest("li") || span.closest("article");
+	const heading = container?.querySelector("h1, h2, h3, h4");
 	if (heading) span.textContent = heading.textContent.trim();
 });
 
@@ -29,12 +30,22 @@ function getFavoriteKey(checkbox) {
 
 function getFavoriteData(checkbox) {
 	const li = checkbox.closest("li");
-	if (!li) return null;
-	const link = li.querySelector("a.content-link");
-	const title = link?.querySelector("h3")?.textContent.trim() || "";
-	const url = link?.getAttribute("href") || "";
-	const desc = li.querySelector(":scope > p")?.textContent.trim() || "";
-	const category = getCategory(li);
+	if (li) {
+		const link = li.querySelector("a.content-link");
+		const title = link?.querySelector("h3")?.textContent.trim() || "";
+		const url = link?.getAttribute("href") || "";
+		const desc = li.querySelector(":scope > p")?.textContent.trim() || "";
+		const category = getCategory(li);
+		return { title, url, desc, category };
+	}
+	// Detailpagina: haal data uit de pagina zelf.
+	const article = checkbox.closest("article");
+	if (!article) return null;
+	const title = article.querySelector("h1")?.textContent.trim() || "";
+	const url = location.pathname;
+	const desc = article.querySelector(".intro")?.textContent.trim() || "";
+	const breadcrumb = article.querySelector(".breadcrumb li:nth-child(3) a");
+	const category = breadcrumb?.textContent.trim() || "";
 	return { title, url, desc, category };
 }
 
@@ -93,10 +104,8 @@ function removeTopic(li) {
 		li.hidden = true;
 		li.classList.remove("remove-item");
 	}
-	li.offsetHeight;
 	li.classList.add("remove-item");
-	li.addEventListener("transitionend", hide, { once: true });
-	setTimeout(hide, 1000);
+	li.addEventListener("animationend", hide, { once: true });
 }
 
 // Deel topic via Web Share API (fallback: kopieer link naar klembord)
@@ -104,58 +113,59 @@ document.addEventListener("click", async (e) => {
 	const btn = e.target.closest(".share-topic");
 	if (!btn) return;
 	const li = btn.closest("li");
-	if (!li) return;
-	const data = getItemData(li);
-	const shareData = { title: data.title, text: data.desc, url: data.url };
+	let shareData;
+	if (li) {
+		const data = getItemData(li);
+		shareData = { title: data.title, text: data.desc, url: data.url };
+	} else {
+		const article = btn.closest("article");
+		if (!article) return;
+		const title = article.querySelector("h1")?.textContent.trim() || document.title;
+		const desc = article.querySelector(".intro")?.textContent.trim() || "";
+		shareData = { title, text: desc, url: location.href };
+	}
 	try {
 		if (navigator.share) {
 			await navigator.share(shareData);
 		} else {
-			await navigator.clipboard.writeText(data.url);
+			await navigator.clipboard.writeText(shareData.url);
 			btn.textContent = "Link gekopieerd";
 			setTimeout(() => { btn.textContent = "Deel"; }, 2000);
 		}
 	} catch {}
 });
 
-// Relevantie radio groups: unieke namen toewijzen en verbergen bij "niet relevant"
-let relevanceCounter = 0;
-document.querySelectorAll(".relevance-group").forEach((fieldset) => {
-	const radios = fieldset.querySelectorAll("input[type='radio']");
-	const groupName = "relevance-" + relevanceCounter++;
-	radios.forEach((r) => { r.name = groupName; });
-});
+// Verberg topic bij klik op "Niet relevant voor mij" (.hide-topic)
+document.addEventListener("click", (e) => {
+	const btn = e.target.closest(".hide-topic");
+	if (!btn) return;
 
-document.addEventListener("change", (e) => {
-	const radio = e.target.closest(".relevance-group input[type='radio']");
-	if (!radio) return;
-	const li = radio.closest("li");
-	if (!li) return;
-	const data = getItemData(li);
-	if (!data.title) return;
-
-	const value = radio.value;
-	localStorage.setItem("relevant:" + data.title, JSON.stringify({ ...data, value }));
-
-	if (value === "irrelevant") {
+	// Op een overzichtspagina: verberg het item in de lijst.
+	const li = btn.closest("li");
+	if (li) {
+		const data = getItemData(li);
+		if (!data.title) return;
 		localStorage.setItem("hidden:" + data.title, JSON.stringify(data));
 		removeTopic(li);
+		return;
 	}
-});
 
-// Herstel relevantie-staat bij laden
-document.querySelectorAll(".relevance-group").forEach((fieldset) => {
-	const li = fieldset.closest("li");
-	if (!li) return;
-	const data = getItemData(li);
-	if (!data.title) return;
-	const raw = localStorage.getItem("relevant:" + data.title);
-	if (!raw) return;
-	try {
-		const stored = JSON.parse(raw);
-		const radio = fieldset.querySelector(`input[value="${stored.value}"]`);
-		if (radio) radio.checked = true;
-	} catch {}
+	// Op een detailpagina: sla op en ga terug naar de overzichtspagina.
+	const article = btn.closest("article");
+	if (!article) return;
+	const title = article.querySelector("h1")?.textContent.trim() || "";
+	if (!title) return;
+	const desc = article.querySelector(".intro")?.textContent.trim() || "";
+	const url = location.pathname;
+	const section = article.querySelector(".breadcrumb li:nth-child(3) a");
+	const category = section?.textContent.trim() || "";
+	localStorage.setItem("hidden:" + title, JSON.stringify({ title, url, desc, category }));
+	// Navigeer terug naar de overzichtspagina (derde breadcrumb-item).
+	if (section?.href) {
+		location.href = section.href;
+	} else {
+		history.back();
+	}
 });
 
 // Sluit feedback-notificaties met .btn-close en onthoud dit
@@ -195,3 +205,53 @@ document.querySelectorAll(".list-content-links li:not(.reserve-topic)").forEach(
 		showNextReserve(li.closest("ul"));
 	}
 });
+
+// Ongelezen-status: markeer content-links als gelezen bij klik en werk badge bij.
+function updateUnreadBadge() {
+	const ongelezen = document.querySelectorAll(".content-link.is-unread").length;
+	document.querySelectorAll("[data-unread-badge]").forEach((badge) => {
+		badge.textContent = ongelezen;
+		badge.hidden = ongelezen === 0;
+	});
+	// Sla het aantal op zodat de badge ook op andere pagina's klopt.
+	try {
+		localStorage.setItem("unread:count", String(ongelezen));
+	} catch (e) { /* localStorage niet toegankelijk */ }
+}
+
+// Herstel gelezen-status bij laden.
+document.querySelectorAll(".content-link.is-unread").forEach((link) => {
+	const heading = link.querySelector("h2, h3, h4");
+	if (!heading) return;
+	const key = "read:" + heading.textContent.trim();
+	if (localStorage.getItem(key)) {
+		link.classList.remove("is-unread");
+	}
+});
+
+// Markeer als gelezen bij klik.
+document.addEventListener("click", (e) => {
+	const link = e.target.closest(".content-link.is-unread");
+	if (!link) return;
+	const heading = link.querySelector("h2, h3, h4");
+	if (!heading) return;
+	localStorage.setItem("read:" + heading.textContent.trim(), "true");
+	link.classList.remove("is-unread");
+	updateUnreadBadge();
+});
+
+// Badge op andere pagina's bijwerken vanuit localStorage.
+try {
+	const opgeslagen = localStorage.getItem("unread:count");
+	if (opgeslagen !== null) {
+		document.querySelectorAll("[data-unread-badge]").forEach((badge) => {
+			badge.textContent = opgeslagen;
+			badge.hidden = opgeslagen === "0";
+		});
+	}
+} catch (e) { /* localStorage niet toegankelijk */ }
+
+// Op de actueel-pagina: bereken de echte telling vanuit de DOM.
+if (location.pathname.includes("/actueel")) {
+	updateUnreadBadge();
+}
