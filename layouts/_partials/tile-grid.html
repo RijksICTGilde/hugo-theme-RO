@@ -1,11 +1,10 @@
 {{/*
-  Card grid partial — wraps a collection of pages in a responsive grid
-  Source: adapted from MinBZK/moza-site (layouts/_partials/card-grid.html)
+  Tile grid partial — wraps a collection of pages in a responsive grid.
 
-  Usage: {{ partial "card-grid.html" .Pages.ByWeight }}
+  Usage: {{ partial "tile-grid.html" .Pages.ByWeight }}
 */}}
-<div class="card-grid">
+<div class="tile-grid">
   {{- range . -}}
-  {{- partial "card.html" . -}}
+  {{- partial "tile.html" . -}}
   {{- end -}}
 </div>

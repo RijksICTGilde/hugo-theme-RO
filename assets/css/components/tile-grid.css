@@ -1,8 +1,7 @@
-/* Card grid component
-   Source: adapted from MinBZK/moza-site (assets/css/components/card-grid.css)
-   Tokens: MOx design system (MinBZK/moza-poc) */
+/* Tile grid component — flat icon/title/description tiles in a responsive grid.
+   Distinct from MOx .card (which has background, shadow, padding). */
 
-.card-grid {
+.tile-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -18,38 +17,37 @@
   }
 }
 
-.card {
+.tile {
   width: 100%;
 }
 
-.card header img {
+.tile header img {
   height: 2.5rem;
   object-fit: contain;
 }
 
-.card header h2 {
+.tile header h2 {
   position: relative;
   margin: 0;
   font-size: 1.1em;
 }
 
-/* Make entire card clickable via pseudo-element on the link */
-.card header h2 a::after {
+.tile header h2 a::after {
   content: "";
   position: absolute;
   inset: 0;
 }
 
-.card header h2 a:focus-visible {
+.tile header h2 a:focus-visible {
   outline: none;
 }
 
-.card header h2 a:focus-visible::after {
+.tile header h2 a:focus-visible::after {
   box-shadow: 0 0 0 2px var(--mox-color-interactive-default-background);
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-.card p {
+.tile p {
   padding-top: 0.5rem;
 }
