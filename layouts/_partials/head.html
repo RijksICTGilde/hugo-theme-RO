@@ -15,7 +15,10 @@
 {{ $theme := resources.Get "css/theme.css" }}
 {{ $hero := resources.Get "css/components/hero.css" }}
 {{ $tileGrid := resources.Get "css/components/tile-grid.css" }}
-{{ $styles := slice $theme $hero $tileGrid }}
+{{ $callout := resources.Get "css/components/callout.css" }}
+{{ $box := resources.Get "css/components/box.css" }}
+{{ $pageNav := resources.Get "css/components/page-nav.css" }}
+{{ $styles := slice $theme $hero $tileGrid $callout $box $pageNav }}
 {{ with resources.Get "css/main.css" }}
   {{ $styles = $styles | append . }}
 {{ end }}

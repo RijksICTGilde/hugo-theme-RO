@@ -1,0 +1,50 @@
+/* Box — bordered content container with optional header and content section.
+   Markup: <section class="box">
+             <header><h2>...</h2></header>
+             <div class="content">...</div>
+           </section> */
+
+.box {
+  padding: var(--toepassing-space-padding-lg);
+  margin-bottom: var(--toepassing-space-layout-md);
+  border: 1px solid var(--toepassing-color-border-default);
+  border-radius: var(--toepassing-border-radius-md);
+  background-color: var(--toepassing-color-background-default);
+
+  header {
+    margin-bottom: var(--toepassing-space-padding-md);
+
+    h2 {
+      font-size: var(--toepassing-text-size-title-xl);
+      margin: 0;
+
+      a {
+        color: var(--toepassing-color-text-default);
+      }
+    }
+  }
+
+  .content {
+    overflow: auto;
+
+    ol {
+      padding-left: 1.4rem;
+    }
+
+    h2 {
+      font-size: var(--toepassing-text-size-title-lg);
+
+      &:first-child {
+        margin-top: var(--toepassing-space-padding-xs);
+      }
+    }
+
+    p,
+    ul,
+    ol {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
