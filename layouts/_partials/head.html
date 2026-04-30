@@ -14,8 +14,8 @@
 {{/* Theme CSS via Hugo asset pipeline */}}
 {{ $theme := resources.Get "css/theme.css" }}
 {{ $hero := resources.Get "css/components/hero.css" }}
-{{ $cardGrid := resources.Get "css/components/card-grid.css" }}
-{{ $styles := slice $theme $hero $cardGrid }}
+{{ $tileGrid := resources.Get "css/components/tile-grid.css" }}
+{{ $styles := slice $theme $hero $tileGrid }}
 {{ with resources.Get "css/main.css" }}
   {{ $styles = $styles | append . }}
 {{ end }}
