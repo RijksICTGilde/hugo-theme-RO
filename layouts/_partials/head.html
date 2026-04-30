@@ -18,7 +18,13 @@
 {{ $callout := resources.Get "css/components/callout.css" }}
 {{ $box := resources.Get "css/components/box.css" }}
 {{ $pageNav := resources.Get "css/components/page-nav.css" }}
-{{ $styles := slice $theme $hero $tileGrid $callout $box $pageNav }}
+{{ $button := resources.Get "css/components/button.css" }}
+{{ $list := resources.Get "css/components/list.css" }}
+{{ $toast := resources.Get "css/components/toast.css" }}
+{{ $mermaid := resources.Get "css/components/mermaid.css" }}
+{{ $articleLayout := resources.Get "css/components/article-layout.css" }}
+{{ $toc := resources.Get "css/components/toc.css" }}
+{{ $styles := slice $theme $hero $tileGrid $callout $box $pageNav $button $list $toast $mermaid $articleLayout $toc }}
 {{ with resources.Get "css/main.css" }}
   {{ $styles = $styles | append . }}
 {{ end }}

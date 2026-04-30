@@ -1,0 +1,23 @@
+{{- /*
+  Render a link with automatic detection of external links.
+
+  Parameters (dict):
+    - href:    The URL
+    - text:    The link text
+    - title:   (optional) Title attribute
+    - private: (optional) Mark as private link
+
+  External links get target="_blank" and rel="external noopener noreferrer".
+  Private links get an additional "(besloten omgeving)" screen-reader label.
+
+  Source: adapted from MinBZK/moza-site (layouts/_partials/render-link.html)
+*/ -}}
+{{- $u := urls.Parse .href -}}
+{{- $isExternal := and $u.IsAbs (hasPrefix $u.Scheme "http") -}}
+{{- if .private -}}
+<a href="{{ .href }}"{{ with .title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="external private noopener noreferrer"{{ else }} rel="private"{{ end }}>{{ .text }}<span class="visually-hidden"> (besloten omgeving)</span></a>
+{{- else if $isExternal -}}
+<a href="{{ .href }}"{{ with .title }} title="{{ . }}"{{ end }} target="_blank" rel="external noopener noreferrer">{{ .text }}</a>
+{{- else -}}
+<a href="{{ .href }}"{{ with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a>
+{{- end -}}

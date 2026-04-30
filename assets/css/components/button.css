@@ -1,0 +1,76 @@
+/* Button variants — outline, ghost, link.
+   The base button styling comes from MOx (.btn-cta). These are alternatives
+   from MinBZK/moza-site for content/UI use. */
+
+.button-outline {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font: inherit;
+  font-weight: var(--toepassing-text-font-weight-bold);
+  text-decoration: none;
+  border-radius: var(--toepassing-border-radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: transparent;
+  color: var(--toepassing-color-interactive-default-background);
+  border: 2px solid var(--toepassing-color-interactive-default-background);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--toepassing-color-interactive-default-background);
+    color: var(--toepassing-color-text-inverse);
+    outline: none;
+  }
+}
+
+.button-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--toepassing-color-text-subtle-1);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background: transparent;
+    border: none;
+    color: var(--toepassing-color-text-default);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--toepassing-color-interactive-default-background);
+    outline-offset: 2px;
+  }
+}
+
+.button-link {
+  display: inline;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  font-weight: inherit;
+  color: var(--toepassing-color-interactive-default-text);
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background: none;
+    border: none;
+    color: var(--toepassing-color-interactive-default-text);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    background: none;
+    border: none;
+    color: var(--toepassing-color-interactive-default-text);
+    outline: 2px solid var(--toepassing-color-interactive-default-text);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,21 @@
+/* Generic styled list — flat, with bottom borders between items.
+   Markup: <ul class="list"><li>...</li></ul> */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: var(--toepassing-space-padding-xs) 0;
+    border-bottom: 1px solid var(--toepassing-color-border-default);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    display: block;
+  }
+}

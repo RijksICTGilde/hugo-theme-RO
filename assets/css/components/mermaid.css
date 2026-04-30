@@ -1,0 +1,63 @@
+/* Mermaid diagram embed — supports light/dark variants and a download button.
+   Markup: <figure class="mermaid-diagram">
+             <img class="mermaid-img--light" src="...">
+             <img class="mermaid-img--dark" src="...">
+             <a class="mermaid-download" href="..." download>↓</a>
+           </figure> */
+
+.mermaid-diagram {
+  position: relative;
+  text-align: center;
+  background-color: var(--toepassing-color-background-subtle);
+  border-radius: var(--toepassing-border-radius-md);
+  padding: var(--toepassing-space-padding-md);
+  margin-bottom: var(--toepassing-space-layout-sm);
+  overflow: hidden;
+}
+
+.mermaid-diagram img {
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.mermaid-diagram .mermaid-img--light {
+  display: block;
+}
+
+.mermaid-diagram .mermaid-img--dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .mermaid-diagram .mermaid-img--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .mermaid-diagram .mermaid-img--dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mermaid-diagram .mermaid-img--light {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .mermaid-diagram .mermaid-img--dark {
+    display: block;
+  }
+}
+
+.mermaid-download {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  border-radius: var(--toepassing-border-radius-sm);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.mermaid-diagram:hover .mermaid-download,
+.mermaid-download:focus-visible {
+  opacity: 1;
+}

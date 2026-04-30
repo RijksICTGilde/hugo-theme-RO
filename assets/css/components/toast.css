@@ -1,0 +1,44 @@
+/* Toast — fixed-position notification banner.
+   Markup: <div class="toast" aria-live="polite">...</div>
+   Or interactive: <button class="toast" hidden>...</button> */
+
+.toast {
+  position: fixed;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--toepassing-color-text-default);
+  background-color: var(--toepassing-color-background-default);
+  border: 1px solid var(--toepassing-color-border-default);
+  border-radius: var(--toepassing-border-radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  text-align: center;
+
+  @media (min-width: 600px) {
+    left: 50%;
+    right: auto;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    max-width: calc(100% - 2rem);
+    white-space: nowrap;
+    text-align: left;
+  }
+}
+
+.toast[hidden] {
+  display: none;
+}
+
+button.toast {
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--toepassing-color-interactive-default-background);
+    border-color: var(--toepassing-color-interactive-default-background);
+    color: var(--toepassing-color-text-inverse);
+  }
+}
